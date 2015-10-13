@@ -4,19 +4,19 @@ p=1;
 ruta='carpeta';
 archivo='nuevo2.txt';
 
-archivoPrin=fopen('salida.txt');
+archivoPrin=fopen('../salida.txt');
 
 lineaPrin = fgetl(archivoPrin);
 
 while lineaPrin ~=-1
     if p==1
-        ar=fopen(['./' ruta '/' archivo]);
-        ar2=fopen(['./' ruta '/fileT.txt'],'w+');
+        ar=fopen(['../' ruta '/' archivo]);
+        ar2=fopen(['../' ruta '/fileT.txt'],'w+');
         p=0;
         final='fileT';
     else
-        ar=fopen(['./' ruta '/fileT.txt']);
-        ar2=fopen(['./' ruta '/' archivo],'w+');
+        ar=fopen(['../' ruta '/fileT.txt']);
+        ar2=fopen(['../' ruta '/' archivo],'w+');
         final=archivo;
         p=1;
     end
@@ -43,4 +43,4 @@ end
 fclose(archivoPrin);
 
 disp(final)
-movefile(['./carpeta/' final '.txt'], ['./carpeta/Nuevo_' archivo]);
+movefile(['../carpeta/' final '.txt'], ['../carpeta/Nuevo_' archivo]);
